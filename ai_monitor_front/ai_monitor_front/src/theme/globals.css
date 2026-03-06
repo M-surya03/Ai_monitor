@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Geist:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Base */
+  --bg-void:      #010409;
+  --bg-canvas:    #0d1117;
+  --bg-surface:   #161b22;
+  --bg-elevated:  #1c2128;
+  --bg-overlay:   #21262d;
+
+  /* Borders */
+  --border-subtle:  #21262d;
+  --border-default: #30363d;
+  --border-muted:   #484f58;
+
+  /* Text */
+  --text-primary:   #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted:     #6e7681;
+  --text-faint:     #484f58;
+
+  /* Accent — indigo */
+  --accent:         #7c6dfa;
+  --accent-dim:     #7c6dfa22;
+  --accent-border:  #7c6dfa44;
+  --accent-hover:   #6d5de8;
+  --accent-glow:    0 4px 24px #7c6dfa44;
+
+  /* Semantic */
+  --green:          #3fb950;
+  --green-dim:      #3fb95014;
+  --green-border:   #3fb95033;
+  --teal:           #22d3a8;
+  --teal-dim:       #22d3a80d;
+  --teal-border:    #22d3a830;
+  --amber:          #f0883e;
+  --amber-dim:      #f0883e14;
+  --amber-border:   #f0883e33;
+  --red:            #f85149;
+  --red-dim:        #f8514914;
+  --red-border:     #f8514933;
+
+  /* Fonts */
+  --font-ui:   'Geist', sans-serif;
+  --font-code: 'JetBrains Mono', monospace;
+
+  /* Layout */
+  --topbar-h:      42px;
+  --statusbar-h:   22px;
+  --activity-w:    48px;
+  --sidebar-w:     320px;
+  --tab-h:         36px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  background: var(--bg-void);
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-default); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-muted); }
+
+/* Syntax */
+.hl-kw  { color: #ff7b72; }
+.hl-cm  { color: var(--text-faint); font-style: italic; }
+.hl-str { color: #a5d6ff; }
+.hl-num { color: #79c0ff; }
+.hl-fn  { color: #d2a8ff; }
+.hl-op  { color: #79c0ff; }
+.hl-type { color: #ffa657; }
+
+/* Animations */
+@keyframes spin        { to { transform: rotate(360deg); } }
+@keyframes pulse-dot   { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:.5; transform:scale(.8); } }
+@keyframes fade-up     { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fade-in     { from { opacity:0; } to { opacity:1; } }
+@keyframes shimmer     { 0% { background-position:-400px 0; } 100% { background-position:400px 0; } }
+@keyframes slide-in-r  { from { opacity:0; transform:translateX(12px); } to { opacity:1; transform:translateX(0); } }
+@keyframes blink       { 0%,100% { opacity:1; } 50% { opacity:0; } }
